@@ -1,0 +1,57 @@
+{
+  "name": "nodecg-parcel",
+  "version": "0.1.0",
+  "description": "Template bundle for bundling with parcel.",
+  "homepage": "",
+  "author": "devJimmyboy",
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "run-p dev:*",
+    "dev:dash": "parcel watch src/dashboard/panel.html --out-dir dashboard --public-url ./",
+    "dev:graphics": "parcel watch src/graphics/index.html --out-dir graphics --public-url ./",
+    "build": "run-p build:*",
+    "build:dash": "parcel build --out-dir dashboard --public-url ./",
+    "build:graphics": "parcel build --out-dir dashboard --public-url ./"
+  },
+  "browserslist": "last 2 chrome versions",
+  "keywords": [
+    "nodecg",
+    "nodecg-bundle",
+    "template",
+    "parcel"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.4.0",
+    "dashboardPanels": [
+      {
+        "name": "panel",
+        "title": "Panel",
+        "width": 2,
+        "file": "panel.html",
+        "workspace": "Config",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.5"
+  }
+}
